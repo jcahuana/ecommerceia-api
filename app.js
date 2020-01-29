@@ -3,6 +3,7 @@
 //------------------------------------------------------------------------------
 // node.js starter application for Bluemix
 //------------------------------------------------------------------------------
+require('./models/lists-dao-cloudant');
 
 // This application uses express as its web server
 // for more info, see: http://expressjs.com
@@ -22,7 +23,7 @@ app.use(express.static(__dirname + '/public'));
 var appEnv = cfenv.getAppEnv();
 
 // start server on the specified port and binding host
-app.listen(appEnv.port, '0.0.0.0', function() {
+app.listen(appEnv.port, '0.0.0.0', function () {
   // print a message when the server starts listening
   console.log("server starting on " + appEnv.url);
 });
